@@ -222,12 +222,21 @@
     </footer>
 
     <script>
-        // Función para enviar mensaje por WhatsApp con la imagen adjunta
+        // Función para descargar la imagen y redirigir a WhatsApp
         function sendWhatsApp(imageSrc, productName) {
             const phoneNumber = "+573217391806"; // Número de WhatsApp
-            const imageUrl = `${window.location.origin}/${imageSrc}`; // Enlace directo a la imagen
             const message = `¡Hola! Estoy interesado en comprar este producto: ${productName}.`;
-            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}&attachment=${encodeURIComponent(imageUrl)}`;
+
+            // Crear un enlace temporal para descargar la imagen
+            const link = document.createElement('a');
+            link.href = imageSrc;
+            link.download = productName.replace(/ /g, '_') + '.webp'; // Nombre del archivo
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Redirigir a WhatsApp con el mensaje
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         }
 
