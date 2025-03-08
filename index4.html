@@ -48,7 +48,7 @@
             </div>
             <div class="product-card">
                 <img src="argollas2/3 (1).webp" alt="Argolla 3" loading="lazy" class="product-image">
-                <button class="whatsapp-button" onclick="sendWhatsApp('argollas2/3.webp', 'Argolla 3')">Me
+                <button class="whatsapp-button" onclick="sendWhatsApp('argollas2/3 (1).webp', 'Argolla 3')">Me
                     interesa</button>
             </div>
             <div class="product-card">
@@ -222,12 +222,12 @@
     </footer>
 
     <script>
-        // Función para enviar mensaje por WhatsApp
+        // Función para enviar mensaje por WhatsApp con la imagen adjunta
         function sendWhatsApp(imageSrc, productName) {
             const phoneNumber = "+573217391806"; // Número de WhatsApp
             const imageUrl = `${window.location.origin}/${imageSrc}`; // Enlace directo a la imagen
-            const message = `¡Hola! Estoy interesado en comprar este producto: ${productName}. Aquí está la imagen: ${imageUrl}`;
-            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            const message = `¡Hola! Estoy interesado en comprar este producto: ${productName}.`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}&attachment=${encodeURIComponent(imageUrl)}`;
             window.open(url, "_blank");
         }
 
