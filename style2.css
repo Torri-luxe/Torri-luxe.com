@@ -165,6 +165,8 @@ header {
     font-size: 16px;
     font-weight: 500;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .whatsapp-button:hover {
@@ -196,13 +198,24 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .promo-card {
+        flex: 1 1 calc(50% - 40px);
+        /* 2 columnas en tablets */
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
     .menu ul {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: 10%;
+        right: 5%;
         background: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
@@ -222,10 +235,9 @@ footer {
 
     .promo-card {
         flex: 1 1 100%;
+        /* 1 columna en móviles */
     }
-}
 
-@media (max-width: 480px) {
     .promo-header h2 {
         font-size: 24px;
     }
@@ -245,5 +257,36 @@ footer {
     .whatsapp-button {
         padding: 10px 20px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .promo-header h2 {
+        font-size: 22px;
+    }
+
+    .promo-header p {
+        font-size: 12px;
+    }
+
+    .promo-card h3 {
+        font-size: 16px;
+    }
+
+    .promo-card p {
+        font-size: 11px;
+    }
+
+    .whatsapp-button {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }

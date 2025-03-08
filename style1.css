@@ -228,12 +228,16 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
     .menu ul {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: 10%;
+        right: 5%;
         background: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
@@ -282,6 +286,14 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         /* 2 columnas en móviles pequeños */
